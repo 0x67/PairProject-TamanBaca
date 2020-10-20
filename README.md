@@ -1,5 +1,3 @@
-# Markdown syntax guide
-
 # Pair Project - Taman Baca
 Hacktiv8 Phase1 Pair Project by [Teguh Eggi Andriawan](https://github.com/teguh-ea) dan [Gabriel Putra P.](https://github.com/0x67)
 
