@@ -14,7 +14,7 @@ const UserRouter = require('./UserRouter');
 // router.get('/', BookController.homepage)
 
 // router.use('/books', BookRouter)
-// router.use('/users', UserRouter)
+router.use('/users', UserRouter)
 
 
 
