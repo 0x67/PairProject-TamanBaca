@@ -18,11 +18,12 @@ Run `npm install`
   * `/login`
 > Untuk `login` atau `register` controllernya pakai yang `AuthController.js`buat ngurus tipe-user, hashing, dll
 >
+  * `/user/pinjam` (pake session) daftar buku yang bisa dipinjam
+  sistem checkout
+  * `/user/pinjam/checkout` checkout buku apa aja yang mau dipinjam
   * `/user/dashboard/:id`
    Redirect kesini abis successful login. Mungkin isinya bisa ada buku apa aja yang udah dipinjam / kapan waktu kembaliin. 
   * `/admin/dashboard/:id`
    Isinya bisa buku apa yang lagi dipinjam, kapan jadwal kembali, liat daftar buku dll
   * `/admin/books`Lihat semua buku beserta actionnya
-  * `/admin/books/add`
-
- Apa lagi ya wkwk...
+  * `/admin/books/add` 
