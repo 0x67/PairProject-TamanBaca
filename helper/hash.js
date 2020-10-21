@@ -7,7 +7,7 @@ const hashPassword = (password) => {
 }
 
 const compareHash = (passwordInput, hash) => {
-   const checkPassword = bcrypt.compareSync(passwordInput, hash)
+   const checkPassword = bcrypt.compare(passwordInput, hash)
 
    return checkPassword
 }
