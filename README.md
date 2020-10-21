@@ -8,22 +8,27 @@ Run `npm install`
 1. Yang berhubungan dengan Sequelize (model, seed, migration, dll) ada di dalam folder `database/`. Udah ada config untuk Sequelize di file `.sequelizerc`
 
 2. Contoh isi folder `controllers/`
- * `controllers/AuthController.js`
  * `controllers/UserController.js`
- * `controllers/AdminController.js`
+ * `controllers/BookController.js`
 
 3. Routing:
-  * `/` Semua daftar buku yang ada dan nggak lagi dipinjam. Tapi yang bisa pinjam cuman user udah register.
-  * `/register`
-  * `/login`
-> Untuk `login` atau `register` controllernya pakai yang `AuthController.js`buat ngurus tipe-user, hashing, dll
->
-  * `/user/pinjam` (pake session) daftar buku yang bisa dipinjam
-  sistem checkout
-  * `/user/pinjam/checkout` checkout buku apa aja yang mau dipinjam
-  * `/user/dashboard/:id`
-   Redirect kesini abis successful login. Mungkin isinya bisa ada buku apa aja yang udah dipinjam / kapan waktu kembaliin. 
-  * `/admin/dashboard/:id`
-   Isinya bisa buku apa yang lagi dipinjam, kapan jadwal kembali, liat daftar buku dll
-  * `/admin/books`Lihat semua buku beserta actionnya
-  * `/admin/books/add` 
+Fitur user
+  * /, melihat semua buku (semua user, ngga perlu auth)
+  * /register, misal user bisa register sendiri
+  * /login
+
+  * /book/pinjam, form buat pinjam buku user yg udah login isinya buku yg nggak lagi dipinjam
+  * /book/checkout, perlu kah? buat nanti user buat konfirmasi 
+
+  * Fitur admin (aku tambahin admin aja didpeannya ya biar nggak bingung wkwk)
+bagian buku
+  * /admin/book, buat si admin ngemanage buku kayak ngeliat status pinjam dll
+  * /admin/book/add, buat nambah buku (admin)
+  * /admin/book/edit, buat edit buku (admin)
+  * /admin/book/delete, buat delete buku (admin)
+
+bagian user
+  * /admin/user, ngeliat daftar user
+  * /admin/user/edit, buat edit pas / ganti role (admin)
+  * /admin/user/delete, buat delete user (admin)
+  * /admin/user/add, misal nggak ada fitur register buat user / atau mungkin admin juga bisa nambahin user
