@@ -1,0 +1,30 @@
+<%- include('partials/headers.ejs', { title: 'Book List' }) %>
+
+<body>
+    <h1>Book List</h1>
+    <a href='/books/add'>Add Book</a>
+    <table border=1px>
+        <tr>
+            <th>No</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Stock</th>
+            <th>Cover</th>
+            <th>Action</th>
+        </tr>
+
+        <% books.forEach((book, index) => { %>
+            <tr>
+                <td><%= index + 1 %></td>
+                <td><%= book.title %></td>
+                <td><%= book.author %></td>
+                <td><%= book.stock %></td>
+                <td><img src='<%= book.cover %>' width='300' height='400'></td>
+                <td><a href='/books/edit/<%= book.id %>'>Edit</a> <a href='/books/delete/<%= book.id %>'>Delete</a></td>
+            </tr>
+        <% }) %>
+
+    </table>
+</body>
+
+<%- include('partials/footer.ejs') %>

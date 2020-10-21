@@ -1,17 +1,17 @@
-const UserController = require('../controllers/UserController')
+const BookController = require('../controllers/BookController')
 
 const router = require('express').Router()
 
 // bagian admin buku
-router.get('/books') // buat si admin ngemanage buku kayak ngeliat status pinjam dll
+router.get('/', BookController.listPinjam) // buat si admin ngemanage buku kayak ngeliat status pinjam dll
 
-router.get('/books/add')
-router.post('/books/add')
+router.get('/add', BookController.addBookForm)
+router.post('/add', BookController.addBook)
 
-router.get(`/books/edit/:id`)
-router.post(`/books/edit/:id`)
+router.get(`/edit/:id`, BookController.editBookForm)
+router.post(`/edit/:id`, BookController.editBook)
 
-router.get(`/books/delete/:id`)
+router.get(`/delete/:id`, BookController.deleteBook)
 
 // router.get('/')
 

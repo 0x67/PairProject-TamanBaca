@@ -1,0 +1,33 @@
+<%- include('partials/headers.ejs', { title: 'Edit Book' }) %>
+
+<body>
+    <h1>Edit Book</h1>
+
+    <%- include('partials/errMessage.ejs') %>
+    
+    <table>
+        <form action='/books/edit/<%= book.id %>' method='POST'>
+            <tr>
+                <td>Title</td><td>:</td>
+                <td><input type='text' name='title' value='<%= book.title %>'></td>
+            </tr>
+            <tr>
+                <td>Author</td><td>:</td>
+                <td><input type='text' name='author' value='<%= book.author %>'></td>
+            </tr>
+            <tr>
+                <td>Cover</td><td>:</td>
+                <td><input type='text' name='cover' value='<%= book.cover %>'></td>
+            </tr>
+            <tr>
+                <td>Stock</td><td>:</td>
+                <td><input type='number' name='stock', value='<%= book.stock %>'></td>
+            </tr>
+            <tr>
+                <td><input type='submit' value='Edit'></td>
+            </tr>
+        </form>
+    </table>
+</body>
+
+<%- include('partials/footer.ejs') %>
