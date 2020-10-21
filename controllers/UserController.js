@@ -67,6 +67,17 @@ class UserController {
          res.send(err)
       })
    }
+
+   static listUser(req, res) {
+      User.findAll()
+      .then((usersData) => {
+         // res.send(usersData)
+         res.render('users/userList')
+      })
+      .catch((err) => {
+         res.send(err)
+      });
+   }
 }
 
 module.exports = UserController

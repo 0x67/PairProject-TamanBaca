@@ -11,8 +11,8 @@ router.post('/register', UserController.register)
 router.get('/login', UserController.loginForm)
 router.post('/login', UserController.login)
 
-// bagian admin user
-// router.get('/users') // user list buat si admin
+
+router.get('/list', UserController.listUser)
 
 // router.get(`/users/edit/:id`)
 // router.post(`/users/edit/:id`)
