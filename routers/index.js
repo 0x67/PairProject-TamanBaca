@@ -13,15 +13,8 @@ const UserRouter = require('./UserRouter');
 
 // router.get('/', BookController.homepage)
 
-// login + register juga nggak perlu pake routing sendiri kan?
-// router.get('/register', UserController.registerForm)
-// router.post('/register', UserController.register)
-
-// router.get('/login', UserController.registerForm)
-// router.post('/login', UserController.register)
-
 // router.use('/books', BookRouter)
-// router.use('/admin', UserRouter)
+// router.use('/users', UserRouter)
 
 
 

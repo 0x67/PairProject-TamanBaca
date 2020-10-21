@@ -4,17 +4,12 @@ const BookController = require('../controllers/BookController')
 const router = require('express').Router()
 
 // router.get('/')
+// login + register juga nggak perlu pake routing sendiri kan?
+// router.get('/register', UserController.registerForm)
+// router.post('/register', UserController.register)
 
-// bagian admin buku
-router.get('/books') // buat si admin ngemanage buku kayak ngeliat status pinjam dll
-
-router.get('/books/add')
-router.post('/books/add')
-
-router.get(`/books/edit/:id`)
-router.post(`/books/edit/:id`)
-
-router.get(`/books/delete/:id`)
+// router.get('/login', UserController.registerForm)
+// router.post('/login', UserController.register)
 
 // bagian admin user
 router.get('/users') // user list buat si admin
