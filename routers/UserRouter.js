@@ -1,5 +1,4 @@
 const UserController = require('../controllers/UserController')
-const BookController = require('../controllers/BookController')
 
 const router = require('express').Router()
 
@@ -14,12 +13,12 @@ router.post('/login', UserController.login)
 
 router.get('/list', UserController.listUser)
 
-// router.get(`/users/edit/:id`)
-// router.post(`/users/edit/:id`)
+router.get(`/edit/:id`, UserController.editForm)
+router.post(`/edit/:id`, UserController.edit)
 
-// router.get(`/users/delete/:id`)
+router.get(`/delete/:id`, UserController.deleteUser)
 
-// router.get(`/users/add/:id`)
-// router.post(`/users/add/:id`)
+router.get(`/add`, UserController.addUserForm)
+router.post(`/add`, UserController.addUser)
 
 module.exports = router
