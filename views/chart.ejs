@@ -1,0 +1,53 @@
+<%- include('partials/headers.ejs', { title: 'Chart Book' }) %>
+
+<body>
+   <h1 style="text-align: center;">Popular Book This Month</h1>
+   <h4 style="text-align: center;"><a href="/books">Back to Books Homepage</a></h4>
+   <div class="chart-container center-chart" style="position: relative; height:40vh; width:80vw">
+      <canvas id="myChart"></canvas>
+  </div>
+  
+<script>
+   const data1 = <%- JSON.stringify(arrTitle) %>
+   const data2 = <%- JSON.stringify(arrCount) %>
+   var ctx = document.getElementById('myChart').getContext('2d');
+   var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+         labels: data1,
+         datasets: [{
+               label: '# of Borrow',
+               data: data2,
+               backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
+               ],
+               borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+               ],
+               borderWidth: 1
+         }]
+      },
+      options: {
+         scales: {
+               yAxes: [{
+                  ticks: {
+                     beginAtZero: true
+                  }
+               }]
+         }
+      }
+   });
+</script>
+</body>
+
+<%- include('partials/footer.ejs') %>

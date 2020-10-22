@@ -1,0 +1,40 @@
+<%- include('partials/headers.ejs', { title: 'List Pinjaman' }) %>
+
+<body>
+    <h1>List Pinjaman <%= user.username %></h1>
+    <a href='/'>Home</a>
+
+    <table>
+      <tr>
+         <th>#</th>
+         <th>Title</th>
+         <th>Author</th>
+         <th>Cover</th>
+         <th>Tanggal Pinjam</th>
+         <th>Tanggal Kembali</th>
+         <th>Status</th>
+     </tr>
+
+      <% books.forEach((book, index) => { %>
+         <% if(book.BookUsers) { %>
+             <% book.BookUsers.forEach((element) => { %>
+                 <% if (element.UserId === user.id) { %>
+                     <tr>
+                         <td><%= index + 1 %></td>
+                         <td><%= book.title %></td>
+                         <td><%= book.author %></td>
+                         <td><img class="thumbnail" src='<%= book.cover %>' width='300' height='400'></td>
+                         <td><%= element.datePinjam %></td>
+                         <td><%= element.dateKembali %></td>
+                         <td><a href='/books/status/<%= element.id %>'><%= element.status %></a></td>
+                     </tr>
+                 <% } %>
+             <% }) %>
+         <% } %>
+     <% })%>
+
+   </table>
+
+</body>
+
+<%- include('partials/footer.ejs') %>

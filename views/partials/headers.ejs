@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <!-- <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css"> -->
+   <!-- <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css"> -->
+   <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+
+   <style>
+      @media (max-width: 480px) {
+         #div {
+             top: 50%; /* IMPORTANT */
+             left: 50%; /* IMPORTANT */
+             display: block;
+             position: absolute;
+             background: url(images/background.png) no-repeat center center;
+             width: 750px;
+             height: 417px;
+     
+             margin-top: -208.5px; /* HALF OF THE HEIGHT */
+             margin-left: -375px; /* HALF OF THE WIDTH */
+         }
+     }
+      table {
+         border-collapse: collapse;
+         width: 100%;
+      }
+
+      th,
+      td {
+         padding: 8px;
+         text-align: center;
+         border-bottom: 1px solid #ddd;
+      }
+
+      tr:hover {
+         background-color: #f5f5f5;
+      }
+
+      .form-control {
+         width: 300px;
+      }
+
+      .form-action {
+         height: 200px;
+         position: relative;
+         border: 3px solid green;
+      }
+
+      .center-text {
+         height: 60px;
+         position: relative;
+       }
+       
+       .center-text h1 {
+         margin: 0;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+       }
+       
+       .thumbnail {
+         max-width: 100px;
+         height: auto;
+       }
+
+       .center-chart {
+         margin: auto;
+         width: 50%;
+         padding: 10px;
+       }
+   </style>
+
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+   </script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+   </script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+      integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
+   </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js" integrity="sha512-zO8oeHCxetPn1Hd9PdDleg5Tw1bAaP0YmNvPY8CwcRyUk7d7/+nyElmFrB6f7vg4f7Fv4sui1mcep8RIEShczg==" crossorigin="anonymous"></script>
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title><%= title %> </title>
+</head>
