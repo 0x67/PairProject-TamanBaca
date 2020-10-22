@@ -262,6 +262,35 @@ class BookController {
         let id = req.session.userId;
         res.redirect(`/books/${id}`);
     }
+
+    static chartBook (req, res) {
+        let arrTitle = [];
+        let arrId = [];
+        let arrCount = [];
+        Book.findAll()
+        .then((books) => {
+            books.forEach((book) => {
+                arrTitle.push(book.title);
+                arrId.push(book.id);
+            })
+            return BookUser.findAll()
+        })
+        .then((data) => {
+            arrId.forEach((id) => {
+                let count = 0;
+                data.forEach((el) => {
+                    if (el.BookId === id) {
+                        count++;
+                    }
+                })
+                arrCount.push(count);
+            })
+            res.render('chart', {arrTitle, arrCount})
+        })
+        .catch((err) => {
+            res.send(err.message);
+        })
+    }
 }
 
 module.exports = BookController
