@@ -4,9 +4,24 @@
 <head>
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
    <!-- <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css"> -->
-   <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+   <!-- <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css"> -->
+   <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
 
    <style>
+      @media (max-width: 480px) {
+         #div {
+             top: 50%; /* IMPORTANT */
+             left: 50%; /* IMPORTANT */
+             display: block;
+             position: absolute;
+             background: url(images/background.png) no-repeat center center;
+             width: 750px;
+             height: 417px;
+     
+             margin-top: -208.5px; /* HALF OF THE HEIGHT */
+             margin-left: -375px; /* HALF OF THE WIDTH */
+         }
+     }
       table {
          border-collapse: collapse;
          width: 100%;
@@ -24,8 +39,32 @@
       }
 
       .form-control {
-         width: 250px;
+         width: 300px;
       }
+
+      .form-action {
+         height: 200px;
+         position: relative;
+         border: 3px solid green;
+      }
+
+      .center-text {
+         height: 60px;
+         position: relative;
+       }
+       
+       .center-text h1 {
+         margin: 0;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+       }
+       
+       .thumbnail {
+         max-width: 100px;
+         height: auto;
+       }
    </style>
 
    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

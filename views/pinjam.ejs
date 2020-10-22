@@ -1,37 +1,31 @@
 <%- include('partials/headers.ejs', { title: 'Pinjam Buku' }) %>
 
 <body>
-    <h1>Form pinjam Buku</h1>
+   <h1>Form Pinjam Buku</h1>
 
-    <table border=1px>
-        <form action='/books/pinjam' method='POST'>
-            <tr>
-                <td>Peminjam</td><td>:</td>
-                <td>
-                    <select name='UserId'>
-                        <% users.forEach((user) => { %>
-                            <option value='<%= user.id %>'><%= user.username %></option>
-                        <% }) %>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Buku</td><td>:</td>
-                <td>
-                    <select name='BookId'>
-                        <% books.forEach((book) => { %>
-                            <option value='<%= book.id %>'><%= book.title %></option>
-                        <% }) %>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type='submit' value='pinjam'>
-                </td>
-            </tr>
-        </form>
-    </table>
+   <form action='/books/pinjam' method='POST'>
+      <div class="form-group">
+         <label for="UserId">Nama Peminjam</label>
+         <select class="form-control" name='UserId'>
+            <% users.forEach((user) => { %>
+            <option value='<%= user.id %>'><%= user.username %></option>
+            <% }) %>
+         </select>
+      </div>
+
+      <div class="form-group">
+         <label for="BookId">Nama Buku</label>
+         <select class="form-control" name='BookId'>
+            <% books.forEach((book) => { %>
+            <option value="">AVAILABLE BOOKS</option>
+            <option value="<%=  book.id %>"><%=  book.title %> </option>
+            <% }) %>
+         </select>
+      </div>
+
+      <button class="btn btn-outline-success" type="submit" value='pinjam'>Pinjam Buku</button>
+      <a class="btn btn-outline-danger" href="/books" role="button">Cancel</a>
+   </form>
 </body>
 
 <%- include('partials/footer.ejs') %>

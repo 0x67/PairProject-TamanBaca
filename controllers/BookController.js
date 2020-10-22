@@ -147,6 +147,7 @@ class BookController {
             return User.findAll()
         })
         .then((users) => {
+         //   res.send(books)
             res.render('pinjam', { users, books });
         })
         .catch((err) => {

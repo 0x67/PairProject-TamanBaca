@@ -32,7 +32,15 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    cover: DataTypes.STRING,
+    cover: {
+      type: DataTypes.STRING,
+      validate: {
+         isUrl: {
+            args: true,
+            msg: 'Image cover must linked to an image'
+         }
+      }
+   },
     stock: DataTypes.INTEGER
   }, {
     sequelize,

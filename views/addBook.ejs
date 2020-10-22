@@ -4,30 +4,33 @@
     <h1>Add Book</h1>
 
     <%- include('partials/errMessage.ejs') %>
-    
-    <table>
-        <form action='/books/add' method='POST'>
-            <tr>
-                <td>Title</td><td>:</td>
-                <td><input type='text' name='title'></td>
-            </tr>
-            <tr>
-                <td>Author</td><td>:</td>
-                <td><input type='text' name='author'></td>
-            </tr>
-            <tr>
-                <td>Cover</td><td>:</td>
-                <td><input type='text' name='cover'></td>
-            </tr>
-            <tr>
-                <td>Stock</td><td>:</td>
-                <td><input type='number' name='stock'></td>
-            </tr>
-            <tr>
-                <td><input type='submit' value='Add'></td>
-            </tr>
-        </form>
-    </table>
+
+    <form action='/books/add' method='POST'>
+      <div class="form-group">
+         <label class="col-form-label" for="title">Book Title</label>
+         <input type="text" class="form-control" placeholder="E.g. Veronika Decides to Die" name="title" required>
+      </div>
+
+      <div class="form-group">
+         <label class="col-form-label" for="author">Author Name</label>
+         <input type="text" class="form-control" placeholder="E.g. Paulo Coelho" name="author" required>
+      </div>
+
+      <div class="form-group">
+         <label class="col-form-label" for="cover">Book Cover (Link to an image)</label>
+         <input type="text" class="form-control" placeholder="E.g. https://shorturl.at/axOWX" name="cover" required>
+      </div>
+
+      <div class="form-group">
+         <label class="col-form-label" for="stock">Stock</label>
+         <input type="number" class="form-control" placeholder="E.g. 5" name="stock" required>
+      </div>
+
+      <button class="btn btn-outline-success" type="submit">Add Book to Collection</button>
+      <a class="btn btn-outline-danger" href="/books" role="button">Cancel</a>
+   </form>
+
+   
 </body>
 
 <%- include('partials/footer.ejs') %>
