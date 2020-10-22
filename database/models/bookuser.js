@@ -15,13 +15,36 @@ module.exports = (sequelize, DataTypes) => {
       }
    };
    BookUser.init({
-      UserId: DataTypes.INTEGER,
-      BookId: DataTypes.INTEGER,
+      UserId: {
+         type: DataTypes.INTEGER,
+         validate: {
+            notEmpty: {
+               args: true,
+               msg: 'Peminjam is required'
+            }
+         }
+      },
+      BookId: {
+         type: DataTypes.INTEGER,
+         validate: {
+            notEmpty: {
+               args: true,
+               msg: 'Buku is required'
+            }
+         }
+      },
       datePinjam: DataTypes.DATE,
-      dateKembali: DataTypes.DATE
+      dateKembali: DataTypes.DATE,
+      status: DataTypes.STRING
    }, {
       sequelize,
       modelName: 'BookUser',
    });
+
+   BookUser.beforeCreate((instance, option) => {
+      if (!instance.status) {
+         instance.status = 'dipinjam';
+      }
+   })
    return BookUser;
 };
