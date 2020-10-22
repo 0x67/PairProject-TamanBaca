@@ -257,6 +257,11 @@ class BookController {
             res.send(err.message);
         })
     }
+
+    static routeListPinjam (req, res) {
+        let id = req.session.userId;
+        res.redirect(`/books/${id}`);
+    }
 }
 
 module.exports = BookController
