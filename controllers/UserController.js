@@ -1,6 +1,6 @@
 const {User} = require('../database/models')
 const {hashPassword} = require('../helper/hash')
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 // Buat reminder
 // username/password untuk testing adalah user123

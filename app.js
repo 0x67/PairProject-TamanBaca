@@ -2,7 +2,7 @@ const express = require('express')
 const router = require('./routers')
 const app = express()
 const session = require('express-session');
-const port = 8080
+const port = 8877
 
 app.use(express.urlencoded({extended: false}))
 
