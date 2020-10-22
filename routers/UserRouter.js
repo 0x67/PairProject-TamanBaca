@@ -10,6 +10,20 @@ router.post('/register', UserController.register)
 router.get('/login', UserController.loginForm)
 router.post('/login', UserController.login)
 
+router.use(function (req, res, next) {
+    if (req.session.userId) {
+        if (req.session.userRole === 'admin') {
+            next()
+        }
+        else {
+            res.redirect('/');
+        }
+    }
+    else {
+        const error = 'Please Login First'
+        res.redirect(`/users/login?error=${error}`);
+    }
+})
 
 router.get('/list', UserController.listUser)
 
