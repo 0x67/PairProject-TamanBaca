@@ -11,9 +11,9 @@ const UserRouter = require('./UserRouter');
 // yang halaman utama buat list buku aku lempar ke BookController ya
 // jadi nggak perlu pake routing sendiri
 
-// router.get('/', BookController.homepage)
+router.get('/', BookController.homepage)
 
-// router.use('/books', BookRouter)
+router.use('/books', BookRouter)
 // router.use('/users', UserRouter)
 
 

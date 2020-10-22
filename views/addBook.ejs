@@ -1,0 +1,33 @@
+<%- include('partials/headers.ejs', { title: 'Book List' }) %>
+
+<body>
+    <h1>Add Book</h1>
+
+    <%- include('partials/errMessage.ejs') %>
+    
+    <table>
+        <form action='/books/add' method='POST'>
+            <tr>
+                <td>Title</td><td>:</td>
+                <td><input type='text' name='title'></td>
+            </tr>
+            <tr>
+                <td>Author</td><td>:</td>
+                <td><input type='text' name='author'></td>
+            </tr>
+            <tr>
+                <td>Cover</td><td>:</td>
+                <td><input type='text' name='cover'></td>
+            </tr>
+            <tr>
+                <td>Stock</td><td>:</td>
+                <td><input type='number' name='stock'></td>
+            </tr>
+            <tr>
+                <td><input type='submit' value='Add'></td>
+            </tr>
+        </form>
+    </table>
+</body>
+
+<%- include('partials/footer.ejs') %>
