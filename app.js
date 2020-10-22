@@ -12,13 +12,12 @@ const shouldCompress = (req, res) => {
      return false;
    }
    return compression.filter(req, res);
- };
+ }; 
 
  app.use(compression({
    filter: shouldCompress,
    threshold: 0
  }));
-
 
 app.use(express.urlencoded({extended: false}))
 
