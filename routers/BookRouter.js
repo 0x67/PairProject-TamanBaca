@@ -51,6 +51,7 @@ router.get('/pinjam', admin, BookController.pinjamForm)
 router.post('/pinjam', BookController.pinjam)
 
 router.get('/listPinjam', user, BookController.routeListPinjam)
+router.get('/chart', BookController.chartBook)
 
 // router.get('/checkout')
 // router.post('/checkout')
