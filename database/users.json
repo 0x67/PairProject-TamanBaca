@@ -8,5 +8,10 @@
       "username" : "randomuser",
       "password" : "randomuser123",
       "role" : "user"
+   },
+   {
+      "username" : "SUPERADMIN",
+      "password" : "$2a$10$VrraD4.6ATzCM1QycvaAfu.g.Y84SbeAkLUsrnLrjfKHAwXuW9d0e",
+      "role" : "admin"
    }
 ]
