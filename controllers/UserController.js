@@ -56,7 +56,10 @@ class UserController {
          else {
             bcrypt.compare(req.body.password, user.password, function (err, result) {
                if(result === true) {
-                  res.send('login sukses')
+                  req.session.userId = user.id;
+                  req.session.userRole = user.role;
+                  req.session.userName = user.username;
+                  res.redirect('/');
                }
                else {
                   res.send('salah password')
